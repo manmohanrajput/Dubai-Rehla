@@ -53,7 +53,7 @@ function Faq() {
     <>
     <Header/>
 
-<section class="banners" style={{backgroundImage: `url(${'../../images/banners_bg.webp'})`}}>
+<section class="banners" style={{backgroundImage: `url(${'../../images/banners_bg.webp'})`}} id='faq'>
 		<div class="container">
 			<div class="banner_head">
 				<h1>FAQ</h1>

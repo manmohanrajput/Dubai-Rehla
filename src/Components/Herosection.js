@@ -6,7 +6,7 @@ import '../css/glightbox.css'
 
 function Herosection() {
   return (
-    <section className="hero" style={{ backgroundImage: `url(${'../../images/bg-image.webp'})` }}>
+    <section className="hero"  style={{ backgroundImage: `url(${'../../images/bg-image.webp'})` }}>
       <div className="container">
         <div className="hero_inner">
           <h1>Rehla App is The Best App For Booking Ride And Sharing Trips</h1>

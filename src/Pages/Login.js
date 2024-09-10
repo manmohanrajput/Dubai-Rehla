@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Header from '../Components/Header/Header'
 import Footer from '../Components/Footer/Footer'
 import '../css/style.css'
@@ -13,6 +13,7 @@ import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 function Login() {
+   const [showPassword, setShowPassword] = useState(false);
    const dispatch= useDispatch()
    const navigate= useNavigate()
    const handleSubmitForm=async(values)=>{
@@ -21,6 +22,10 @@ function Login() {
             await dispatch(signInAction({...values},navigate))
             // await dispatch(signInAction({...values,PhoneNumber:"+9651143134889",Password:"12345678"}))
    } 
+
+   const togglePassword = () => {
+      setShowPassword((prevState) => !prevState);
+    };
   return (
     <>
         <Header/>
@@ -72,8 +77,9 @@ function Login() {
          <div class="form_group">
              <label for="password">Password*</label>
              <div class="password_box">
-                 <input type="password"  name="Password" class="password_input" value={values?.Password} onChange={handleChange} placeholder="Password" required/>
-                 <span class="show_password" onclick="togglePassword()">👁️</span>
+                 <input  type={showPassword ? "text" : "password"}  name="Password" class="password_input" value={values?.Password} onChange={handleChange} placeholder="Password" required/>
+                 {/* <span class="show_password" onclick="togglePassword()">👁️</span> */}
+                 <span className="show_password" onClick={togglePassword}> {showPassword ? "🙈" : "👁️"} </span>
              </div>
              <LocalError touched={touched.Password} error={errors.Password} />
          </div>
@@ -90,7 +96,6 @@ function Login() {
          </div>
       </form>
       )}
-
             </Formik>
          </div>
       </div>

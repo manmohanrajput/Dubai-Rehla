@@ -110,10 +110,9 @@ function EditProfile() {
                   </div>
                   <div class=" form_edit edit_date birth_date">
                      <label for="dob">Date of Birth*</label>
-                     <input type="date" id="dob" name="DateOfBirth" placeholder="Select date of birth" value={moment(userDetails?.DateOfBirth).format("yyyy-MM-DD")} onChange={handleChange}/>
+                     <input type="date" id="dob" name="DateOfBirth" placeholder="Select date of birth" value={moment(values?.DateOfBirth).format("yyyy-MM-DD")} onChange={handleChange}/>
                   </div>
-               </div>
-               
+               </div>      
                <div class="selection_box">               
                   <label>Gender*</label>
                   <div class="gender_selection">

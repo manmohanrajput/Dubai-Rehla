@@ -57,7 +57,7 @@ function PrebookingTrips() {
    return (
       <>
          <Header />
-         <section class="banners" style={{ backgroundImage: `url(${'../../images/banners_bg.webp'})` }}>
+         <section class="banners" style={{ backgroundImage: `url(${'../../images/banners_bg.webp'})` }} id='prebooking-trips'>
             <div class="container">
                <div class="banner_head">
                   <h1>Prebooking Trips</h1>

@@ -112,7 +112,7 @@ function Registration() {
                       value={values?.Name}
                       onChange={handleChange}
                     />
-                    ;
+                    
                     <LocalError touched={touched.Name} error={errors.Name} />
                   </div>
                   <div class="form_group ">

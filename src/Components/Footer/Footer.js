@@ -3,8 +3,22 @@ import '../../css/style.css'
 import '../../css/reset.css'
 import '../../css/responsive.css'
 import '../../css/glightbox.css'
+import { Link } from 'react-router-dom';
+
 
 function Footer() {
+   const handleScroll = (id) => {
+      const targetElement = document.getElementById(id);
+      
+      if (targetElement) {
+        // Scroll to the target element
+        window.scrollTo({
+          top: targetElement.offsetTop, // Get the top position of the target element
+          behavior: "smooth" // Smooth scrolling effect
+        });
+      }
+    };
+    
   return (
     <>
          <footer class="footer">
@@ -29,19 +43,19 @@ function Footer() {
             <div class="footer_menu">
                <h4>Site map</h4>
                <ul class="footer_links">
-                  <li> <a href="#/">Home</a> </li>
-                  <li> <a href="#/services">Services</a> </li>
-                  <li> <a href="#/prebooking-trips">Prebooking Trips</a> </li>
-                  <li> <a href="#/tourism-tours">Tourism Tours</a> </li>
+                  <li> <a href="/">Home</a> </li>
+                  <li> <a href="#services">Services</a> </li>
+                  <li> <a href="#prebooking-trips">Prebooking Trips</a> </li>
+                  <li> <a href="#tourism-tours">Tourism Tours</a> </li>
                </ul>
             </div>
             <div class="footer_menu">
                <h4>Useful links</h4>
                <ul class="footer_links">
-                  <li> <a href="#/news">News</a> </li>
-                  <li> <a href="#/terms-of-use">Terms of Use</a> </li>
-                  <li> <a href="#/privacy-policy">Privacy Policy</a> </li>
-                  <li> <a href="#/faq">Frequently Asked</a> </li>
+                  <li> <a href="#news">News</a> </li>
+                  <li> <a href="#terms-of-use">Terms of Use</a> </li>
+                  <li> <a href="#privacy-policy">Privacy Policy</a> </li>
+                  <li> <a href="#faq">Frequently Asked</a> </li>
                </ul>
             </div>
             <div class="footer_menu">
@@ -60,7 +74,7 @@ function Footer() {
          </div>
       </div>
       <div class="whts_icon">
-         <a href="javascript:void(0);" target="_blank"> <img src="images/whatapp.webp" alt="whatsapp icon" /> </a>
+         <a href="https://wa.me/+966536142224" target="_blank"> <img src="images/whatapp.webp" alt="whatsapp icon" /> </a>
       </div>
       {/* <!-------------|| Script Start ||-----------------> */}
    <script src="js/isotope.pkgd.js"></script>

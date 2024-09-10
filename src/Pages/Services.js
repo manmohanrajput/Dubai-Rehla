@@ -12,7 +12,7 @@ function Services() {
   return (
     <>
         <Header/>
-        <ServiceHeroSection/>
+        <ServiceHeroSection />
         <Service/>
         <AboutRahela/>
         <Footer/>

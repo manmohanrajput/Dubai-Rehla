@@ -6,7 +6,7 @@ import '../css/glightbox.css'
 function ServiceHeroSection() {
   return (
     <>
-        <section class="banners" style={{backgroundImage: `url(${'../../images/banners_bg.webp'})`}}>
+        <section class="banners" style={{backgroundImage: `url(${'../../images/banners_bg.webp'})`}} id="services">
 		<div class="container">
 			<div class="banner_head">
 				<h1>Services</h1>

@@ -198,7 +198,7 @@ function News() {
   return (
     <>
       <Header />
-      <section className="banners" style={{ backgroundImage: `url(${'../../images/banners_bg.webp'})` }}>
+      <section className="banners" style={{ backgroundImage: `url(${'../../images/banners_bg.webp'})` }} id='news'>
         <div className="container">
           <div className="banner_head">
             <h1>News</h1>
