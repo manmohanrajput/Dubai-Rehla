@@ -51,9 +51,9 @@ function App() {
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
         <Route element={<PrivateRoute userData={userDetails} />}>
-         
-          <Route exact path="/prebooking-trips" element={<PrebookingTrips/>} />
-          <Route exact path="/edit-profile" element={<EditProfile/>} />
+          <Route exact path="/prebooking-trips" element={<PrebookingTrips/>} /> 
+        </Route>
+        <Route exact path="/edit-profile" element={<EditProfile/>} />
           <Route exact path="/my-preferences" element={<MyPreferences/>} />
           <Route exact path="/add-balance" element={<AddBalance/>} />
           <Route exact path="/add-balance-form" element={<AddBalanceForm/>} />
@@ -66,7 +66,6 @@ function App() {
           <Route exact path="/my-rates" element={<MyRates/>} />
           <Route exact path="/my-trip" element={<MyTrip/>} />
           <Route exact path="/logout" element={<Logout/>} />
-        </Route>
           <Route  element={<PublicRoute userData={userDetails} />}>
           <Route exact path="/login" element={<Login/>} />
           <Route exact path="/forget-password" element={<ForgetPassword/>} />
