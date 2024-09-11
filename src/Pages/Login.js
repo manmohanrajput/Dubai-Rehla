@@ -70,14 +70,14 @@ function Login() {
                     <option value="+966">+966</option>
                     <option value="+91">+91</option>
                 </select>
-                <input type="text" className='d-block' name="PhoneNumber" placeholder="Enter phone number" value={values?.PhoneNumber} onChange={handleChange} />
+                <input type="text" className='d-block' name="PhoneNumber" placeholder="Enter phone number"  onChange={handleChange} />
              </div>
                 <LocalError touched={touched.PhoneNumber} error={errors.PhoneNumber} />
          </div>
          <div class="form_group">
              <label for="password">Password*</label>
              <div class="password_box">
-                 <input  type={showPassword ? "text" : "password"}  name="Password" class="password_input" value={values?.Password} onChange={handleChange} placeholder="Password" required/>
+                 <input  type={showPassword ? "text" : "password"}  name="Password" class="password_input"  onChange={handleChange} placeholder="Password" required/>
                  {/* <span class="show_password" onclick="togglePassword()">👁️</span> */}
                  <span className="show_password" onClick={togglePassword}> {showPassword ? "🙈" : "👁️"} </span>
              </div>
