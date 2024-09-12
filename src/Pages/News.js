@@ -159,7 +159,7 @@ function News() {
         {/* <a href={item.link}> */}
         <a href={'#/news-details'}>
           <div className="news_img">
-            <img src={item.Image} alt="news" />
+            <img src={item?.Image} alt="news" />
           </div>
           <ul className="autor_detail">
             <li><img src="images/news/admin.svg" alt="admin" />{item.admin || 'Admin'}</li>
