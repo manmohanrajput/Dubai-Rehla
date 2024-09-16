@@ -3,14 +3,18 @@ import '../css/style.css'
 import '../css/reset.css'
 import '../css/responsive.css'
 import '../css/glightbox.css'
+import { useTranslation } from 'react-i18next';
+
 function AppStore() {
+  const { t } = useTranslation();
+
   return (
     <>
          <section class="aap_sec ptb100" style={{ backgroundImage: `url(${'.../../images/bg_clr.webp'})` }}>
          <div class="container">
             <div class="sec_head">
-                  <h2> Rehla is available for all devices </h2>
-                  <p>A Private Limited is the most popular type of partnership Malta. The limited <br/> liabilityis, in fact, the only type of the company allowed by Companies.</p>
+                  <h2> {t('AboutUspage.availablDevices')}</h2>
+                  <p> {t('AboutUspage.avaiDes')}<br/> {t('AboutUspage.avaiDes1')}</p>
                </div>
                <div class="app_store">
                   <a href=""><img src="../../images/App-Store.webp"/> </a>

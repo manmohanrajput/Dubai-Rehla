@@ -9,14 +9,18 @@ import '../css/responsive.css'
 import '../css/glightbox.css'
 
 import { Pagination, Navigation, Autoplay } from 'swiper/modules';
+import { useTranslation } from 'react-i18next';
+
 
 function AppScreenshots() {
+  const { t } = useTranslation();
+
     return (
         <>
             <section className="screenshot ptb100">
                 <div className="container">
                     <div className="sec_head">
-                        <h2> <span>Rehla</span> screenshots</h2>
+                        <h2> <span>{t('heroSection.Rehla')}</span>{t('heroSection.screenShot')}</h2>
                         <p>An enim nullam tempor gravida donec enim <br /> congue magnasus varius blandit sit amet non magna.</p>
                     </div>
                     <div className="screen_owl owl-carousel owl-theme pt60">

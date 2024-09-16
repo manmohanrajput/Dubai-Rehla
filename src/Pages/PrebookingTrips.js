@@ -8,9 +8,13 @@ import { useDispatch } from 'react-redux';
 import { addNewTripAction } from '../actions/tripAction';
 import { addPrebookingTrip } from '../services/tripService';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+
 
 
 function PrebookingTrips() {
+   const { t } = useTranslation(); 
+
    const navigate = useNavigate()
    const [tripDetails, setTripDetails] = useState({
       // FromCaption: "",
@@ -60,7 +64,7 @@ function PrebookingTrips() {
          <section class="banners" style={{ backgroundImage: `url(${'../../images/banners_bg.webp'})` }} id='prebooking-trips'>
             <div class="container">
                <div class="banner_head">
-                  <h1>Prebooking Trips</h1>
+                  <h1>{t('header.prebooking')} </h1>
                   <p>An enim nullam tempor sapien gravida donec enim ipsum <br /> porta justo  congue purus pretium ligula </p>
                </div>
                <div class="bredcrub">
@@ -98,13 +102,13 @@ function PrebookingTrips() {
                         <div class="prebooking_box">
                            <div class="booking_grid">
                               <div class="booking_group">
-                                 <label for="SourceCity">Start Place</label>
+                                 <label for="SourceCity">{t('preBookingtrips.startPlace')}</label>
                                  <input type="text" id="SourceCity" value={values?.SourceCity} placeholder="please enter Start Place" onChange={handleChange} />
                                  <LocalError touched={touched.SourceCity} error={errors.SourceCity} />
 
                               </div>
                               <div class="booking_group">
-                                 <label for="DistinationCity">Arrival Place</label>
+                                 <label for="DistinationCity">{t('preBookingtrips.arrivalPlace')}</label>
                                  <input type="text" id="DistinationCity" value={values?.DistinationCity} placeholder="please enter Arrival Place" onChange={handleChange} />
                                  <LocalError touched={touched.DistinationCity} error={errors.DistinationCity} />
 
@@ -112,13 +116,13 @@ function PrebookingTrips() {
                            </div>
                            <div class="booking_grid">
                               <div class="booking_group">
-                                 <label for="StartDateTime">Start date</label>
+                                 <label for="StartDateTime">{t('preBookingtrips.startDate')}</label>
                                  <input type="date" id="StartDateTime" value={values?.StartDateTime} placeholder="please Select Start date" onChange={handleChange} />
                                  <LocalError touched={touched.StartDateTime} error={errors.StartDateTime} />
 
                               </div>
                               <div class="booking_group">
-                                 <label for="start_time">Start time</label>
+                                 <label for="start_time">{t('preBookingtrips.startTime')}</label>
                                  <input type="time" id="start_time" value={values?.start_time} placeholder="please Select Start time" onChange={handleChange} />
                                  <LocalError touched={touched.start_time} error={errors.start_time} />
 
@@ -126,7 +130,7 @@ function PrebookingTrips() {
                            </div>
                            <div class="booking_grid">
                               <div class="booking_group">
-                                 <label for="PaymentType">Payment type</label>
+                                 <label for="PaymentType">{t('preBookingtrips.paymentType')}</label>
                                  <select id="PaymentType" onChange={handleChange} value={values?.PaymentType} >
                                     <option value="">please Select Payment type</option>
                                     <option value="credit">Credit Card</option>
@@ -137,7 +141,7 @@ function PrebookingTrips() {
 
                               </div>
                               <div class="booking_group">
-                                 <label for="CarCategoryId">Select car category</label>
+                                 <label for="CarCategoryId">{t('preBookingtrips.SelectCarcategory')}</label>
                                  <select id="CarCategoryId" onChange={handleChange} value={values?.CarCategoryId} >
                                     <option value="">please Select car category</option>
                                     <option value="economy">Economy</option>
@@ -149,13 +153,13 @@ function PrebookingTrips() {
                               </div>
                            </div>
                            <div class="booking_group">
-                              <label for="CouponValue">coupon</label>
+                              <label for="CouponValue">{t('preBookingtrips.coupon')}</label>
                               <input type="text" id="CouponValue" value={values?.CouponValue} placeholder="please enter coupon" onChange={handleChange} />
                               <LocalError touched={touched.CouponValue} error={errors.CouponValue} />
 
                            </div>
                         </div>
-                        <button type="submit" class="prebooking_sub">Prebooking Now</button>
+                        <button type="submit" class="prebooking_sub">{t('preBookingtrips.preBookingNow')}</button>
                      </form>
                   )
                   }

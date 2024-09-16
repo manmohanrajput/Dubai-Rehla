@@ -7,6 +7,8 @@ import '../css/responsive.css';
 import '../css/glightbox.css';
 import { GetAllAdvertisments } from '../services/tripService';
 import moment from 'moment';
+import { useTranslation } from 'react-i18next';
+
 const itemsPerPage = 6;
 
 const listItems = [
@@ -128,6 +130,8 @@ const listItems = [
 ];
 
 function News() {
+  const { t } = useTranslation();
+
   const [currentPage, setCurrentPage] = useState(1);
   const [list, setList] = useState([]);
 
@@ -201,7 +205,7 @@ function News() {
       <section className="banners" style={{ backgroundImage: `url(${'../../images/banners_bg.webp'})` }} id='news'>
         <div className="container">
           <div className="banner_head">
-            <h1>News</h1>
+            <h1>{t('header.news')}</h1>
             <p>An enim nullam tempor sapien gravida donec enim ipsum <br /> porta justo  congue purus pretium ligula </p>
           </div>
           <div className="bredcrub">

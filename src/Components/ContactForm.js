@@ -7,8 +7,12 @@ import { Formik } from "formik";
 import { contactUsSchema } from "../validationSchema/validationSchema";
 import { ContactUs } from "../services/tripService";
 import LocalError from "./Error/validationError";
+import { useTranslation } from 'react-i18next';
+
 
 function ContactForm() {
+  const { t } = useTranslation();
+
   const [constactUs, setContactUs] = useState({});
   const handleSubmitForm = async (values) => {
     console.log({ values });
@@ -146,7 +150,7 @@ function ContactForm() {
                         <input
                           type="text"
                           id="UserName"
-                          placeholder="Enter your name*"
+                          placeholder={t('contactUspage.nameplaceholder')}
                           onChange={handleChange}
                           value={values?.UserName}
                         />
@@ -160,7 +164,7 @@ function ContactForm() {
                         <input
                           type="email"
                           id="UserEmail"
-                          placeholder="Enter your email address*"
+                          placeholder={t('contactUspage.emailplaceholder')}
                           onChange={handleChange}
                           value={values?.UserEmail}
                         />
@@ -173,7 +177,7 @@ function ContactForm() {
                         {/* <!-- <label for="Message"> Company name</label> --> */}
                         <textarea
                           id="Message"
-                          placeholder="Write your message"
+                          placeholder={t('contactUspage.messageplaceholder')}
                           onChange={handleChange}
                           value={values?.Message}
                         ></textarea>
@@ -183,8 +187,8 @@ function ContactForm() {
                         />
                       </div>
                       <div class="submit_btn">
-                        <input type="submit" value="Send Message" />
-                      </div>
+                      <input type="submit" value={t('contactUspage.submit')} />
+                     </div>
                     </div>
                   </form>
                 )}

@@ -3,42 +3,46 @@ import '../css/style.css'
 import '../css/reset.css'
 import '../css/responsive.css'
 import '../css/glightbox.css'
+import { useTranslation } from 'react-i18next';
+
 function Services() {
+   const { t } = useTranslation(); 
+
   return (
     <>
           <section class="service ptb100">
          <div class="container">
             <div class="sec_head">
-               <h2> <span>Rehla </span> Services</h2>
+               <h2> <span>{t('rehlaServiceSection.rehlaServiceTitle')} </span> {t('rehlaServiceSection.rehlaSer')}</h2>
                <p>Fully layered dolor sit amet, nobis id expedita <br/> dolores officiis laboriosam.</p>
             </div>
             <div class="service_inner pt60">
                <div class="service_box">
                   <img src="../../images/going.webp"/>
                   <div class="service_content_box">
-                     <h3>I'm going to</h3>
-                     <p>Passengers order a ride with a local driver to go to another place inside the city Ride-hailing.</p>
+                     <h3>{t('rehlaServiceSection.serviceTitle1')}</h3>
+                     <p>{t('rehlaServiceSection.serviceDescription1')}</p>
                   </div>
                </div>
                <div class="service_box">
                   <img src="../../images/Prebooking-trips.webp"/>
                   <div class="service_content_box">
-                     <h3>Prebooking trips</h3>
-                     <p>Passengers can make a prebooking trip order with a local driver to go to any place.</p>
+                     <h3>{t('rehlaServiceSection.serviceTitle2')}</h3>
+                     <p>{t('rehlaServiceSection.serviceDescription2')}</p>
                   </div>
                </div>
                <div class="service_box">
                   <img src="../../images/Tourism-Tours.webp"/>
                   <div class="service_content_box">
-                     <h3>Tourism Tours</h3>
-                     <p>Tourism expert creates a tour of the tourist cities and is searched for by regions.</p>
+                     <h3>{t('rehlaServiceSection.serviceTitle3')}</h3>
+                     <p>{t('rehlaServiceSection.serviceDescription3')}</p>
                   </div>
                </div>
                <div class="service_box">
                   <img src="../../images/Sending-Parcels.webp"/>
                   <div class="service_content_box">
-                     <h3>Sending Parcels</h3>
-                     <p>Sender offers a parcel to deliver between cities and wait for Rehla captain to accept it.</p>
+                     <h3>{t('rehlaServiceSection.serviceTitle4')}</h3>
+                     <p>{t('rehlaServiceSection.serviceDescription4')}</p>
                   </div>
                </div>
             </div>

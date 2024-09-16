@@ -9,14 +9,18 @@ import '../css/responsive.css'
 import '../css/glightbox.css'
 import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 
+import { useTranslation } from 'react-i18next';
 
 function Testimonial() {
+
+  const { t } = useTranslation();
+
     return (
         <section className="testimonial ptb100">
             <div className="container">
                 <div className="testimonial_left">
                     <div className="sec_head">
-                        <h2>What clients are saying</h2>
+                        <h2>{t('heroSection.clentSay')}</h2>
                     </div>
                     <div className="testimonial_owl pt60">
                         <Swiper

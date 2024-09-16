@@ -3,14 +3,18 @@ import '../css/style.css'
 import '../css/reset.css'
 import '../css/responsive.css'
 import '../css/glightbox.css'
+import { useTranslation } from 'react-i18next';
+
 function Steps() {
+  const { t } = useTranslation();
+
   return (
     <>
          <section class="traveler coming">
          <div class="about_inner ptb100">
             <div class="container">
                <div class="sec_head">
-                  <h2> Join tourism experts as a <br/> <span>Rehla</span> traveler </h2>
+                  <h2> {t('heroSection.join')}<br/> <span>{t('heroSection.Rehla')}</span>{t('heroSection.Traveler')}</h2>
                   <div class="img_list">
                      <img src="../../images/phone.webp" alt="img"/>
                      <img src="../../images/phone.webp" alt="img"/>
@@ -21,22 +25,22 @@ function Steps() {
                   <div class="travel_box">
                      <span></span>
                      <div>
-                        <h4>First Step</h4>
-                        <p>Please Click on the Join Now and fill in your data as a tourist traveler</p>
+                        <h4>{t('heroSection.firstStep')}</h4>
+                        <p>{t('heroSection.first')}</p>
                      </div>
                   </div>
                   <div class="travel_box">
                      <span></span>
                      <div>
-                        <h4>Second Step</h4>
-                        <p>Fill out your tourism information form</p>
+                        <h4>{t('heroSection.secondStep')}</h4>
+                        <p>{t('heroSection.second')}</p>
                      </div>
                   </div>
                   <div class="travel_box">
                      <span></span>
                      <div>
-                        <h4>Third Step</h4>
-                        <p>After reviewing our data, you will be able to create tours</p>
+                        <h4>{t('heroSection.thirdStep')}</h4>
+                        <p>{t('heroSection.third')}</p>
                      </div>
                   </div>
                </div>
@@ -45,7 +49,7 @@ function Steps() {
          <div class="about_inner ptb100">
             <div class="container">
                <div class="sec_head">
-                  <h2> Book your prebooking <br/><span>Rehla</span> trip now </h2>
+                  <h2> {t('heroSection.book')} <br/><span>{t('heroSection.Rehla')} </span>{t('heroSection.trip')} </h2>
                   <div class="img_list">
                      <img src="../../images/phone.webp" alt="img"/>
                      <img src="../../images/phone.webp" alt="img"/>
@@ -56,31 +60,31 @@ function Steps() {
                   <div class="travel_box">
                      <span></span>
                      <div>
-                        <h4>First Step</h4>
-                        <p>Login with your account for Rehla or create an account for the first time through our website or App</p>
+                        <h4>{t('heroSection.firstStep')}</h4>
+                        <p>{t('heroSection.login')}</p>
                      </div>
                   </div>
                   <div class="travel_box">
                      <span></span>
                      <div>
-                        <h4>Second Step</h4>
-                        <p>Go to Prebooking Trips</p>
+                        <h4>{t('heroSection.secondStep')}</h4>
+                        <p>{t('heroSection.goto')}</p>
                      </div>
                   </div>
                   <div class="travel_box">
                      <span></span>
                      <div>
-                        <h4>Third Step</h4>
-                        <p>Select your destination and departure date and book now and wait for your offer to be accepted by one of our captains</p>
+                        <h4>{t('heroSection.thirdStep')}</h4>
+                        <p>{t('heroSection.select')}</p>
                      </div>
                   </div>
                </div>
             </div>
          </div>
          <div class="about_inner ptb100">
-            <div class="container">
+          <div class="container">
                <div class="sec_head">
-                  <h2> Join tourism experts as a <br/> <span>Rehla</span> traveler </h2>
+                  <h2> {t('heroSection.join')}<br/> <span>{t('heroSection.Rehla')}</span>{t('heroSection.Traveler')}</h2>
                   <div class="img_list">
                      <img src="../../images/phone.webp" alt="img"/>
                      <img src="../../images/phone.webp" alt="img"/>
@@ -91,22 +95,22 @@ function Steps() {
                   <div class="travel_box">
                      <span></span>
                      <div>
-                        <h4>First Step</h4>
-                        <p>Please Click on the Join Now and fill in your data as a tourist traveler</p>
+                        <h4>{t('heroSection.firstStep')}</h4>
+                        <p>{t('heroSection.first')}</p>
                      </div>
                   </div>
                   <div class="travel_box">
                      <span></span>
                      <div>
-                        <h4>Second Step</h4>
-                        <p>Fill out your tourism information form</p>
+                        <h4>{t('heroSection.secondStep')}</h4>
+                        <p>{t('heroSection.second')}</p>
                      </div>
                   </div>
                   <div class="travel_box">
                      <span></span>
                      <div>
-                        <h4>Third Step</h4>
-                        <p>After reviewing our data, you will be able to create tours</p>
+                        <h4>{t('heroSection.thirdStep')}</h4>
+                        <p>{t('heroSection.third')}</p>
                      </div>
                   </div>
                </div>

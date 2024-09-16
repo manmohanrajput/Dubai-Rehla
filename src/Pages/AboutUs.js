@@ -12,8 +12,12 @@ import '../css/glightbox.css';
 import '../css/reset.css';
 import '../css/responsive.css';
 import '../css/style.css';
+import { useTranslation } from 'react-i18next';
+
 
 function AboutUs() {
+  const { t } = useTranslation();
+
   useEffect(() => {
     AOS.init();
 
@@ -73,7 +77,7 @@ function AboutUs() {
       <section className="our_team ptb100">
         <div className="container">
           <div className="sec_head">
-            <h2> Our <span>Rehla</span> team</h2>
+            <h2> {t('AboutUspage.OurRehla1')} <span>{t('AboutUspage.OurRehla2')}</span> {t('AboutUspage.OurRehla3')}</h2>
             <p>Fully layered dolor sit amet, consectetur Facere, <br /> nobis, id expedita dolores officiis laboriosam.</p>
           </div>
           <div className="team_inner pt60">
@@ -112,16 +116,16 @@ function AboutUs() {
       <section id="portfolio" className="portfoio ptb120">
         <div className="container">
           <div className="sec_head pb60">
-            <h2> Rehla <span>Gallery </span></h2>
+            <h2> {t('AboutUspage.OurRehla2')} <span>{t('AboutUspage.Gallery')} </span></h2>
             <p>Fully layered dolor sit amet, consectetur Facere, <br /> nobis, id expedita dolores officiis laboriosam.</p>
           </div>
           <div className="portfolio_list">
             <ul id="portfolio-flters">
-              <li data-filter="*" className="filter-active">See All</li>
-              <li data-filter=".branding">Branding</li>
-              <li data-filter=".designing">Designing</li>
-              <li data-filter=".photography">Photography</li>
-              <li data-filter=".development">Development</li>
+              <li data-filter="*" className="filter-active">{t('AboutUspage.SeeAll')}</li>
+              <li data-filter=".branding">{t('AboutUspage.Branding')}</li>
+              <li data-filter=".designing">{t('AboutUspage.Designing')}</li>
+              <li data-filter=".photography">{t('AboutUspage.Photography')}</li>
+              <li data-filter=".development">{t('AboutUspage.Development')}</li>
             </ul>
           </div>
           <div className="portfolio-container">
