@@ -37,7 +37,7 @@ export const ROUTESCONSTANTS = {
     TOURISM_TOURS: "/tourism-tours",
     NEWS: "/news",
     NEWS_DETAILS: "/news-details",
-    VERIFICATION: "/verification",
+    VERIFICATION: "/verifications",
     PRIVACY_POLICY: "/privacy-policy",
     TERM_OF_USE: "/terms-of-use",
     CITY_TOUR: "/city-tour-al-ula",

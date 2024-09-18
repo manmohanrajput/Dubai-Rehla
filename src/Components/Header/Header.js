@@ -97,7 +97,7 @@ function Header() {
     },
     {
       title: t("header.notification"),
-      path: ROUTESCONSTANTS?.VERIFICATIONS,
+      path: ROUTESCONSTANTS?.NOTIFICATIONS,
       icon: <BellIconSvg />,
     },
     {

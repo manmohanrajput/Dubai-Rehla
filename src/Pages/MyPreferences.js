@@ -1,81 +1,98 @@
-import React from 'react'
-import Footer from '../Components/Footer/Footer'
-import Header from '../Components/Header/Header'
-import { useSelector } from 'react-redux'
+import React, { useEffect, useState } from 'react';
+import Footer from '../Components/Footer/Footer';
+import Header from '../Components/Header/Header';
+import { useSelector } from 'react-redux';
 
 function MyPreferences() {
    const { preferences } = useSelector(state => state?.preferenceStore);
-   console.log({ preferences });
+   const [userPreferences, setUserPreferences] = useState(preferences || {});
+
+   useEffect(() => {
+      const savedPreferences = JSON.parse(localStorage.getItem('userPreferences'));
+      if (savedPreferences) {
+         setUserPreferences(savedPreferences);
+      }
+   }, []);
+
+   const handlePreferenceChange = (preferenceKey) => (e) => {
+      const updatedPreferences = {
+         ...userPreferences,
+         [preferenceKey]: e.target.checked,
+      };
+      setUserPreferences(updatedPreferences);
+      localStorage.setItem('userPreferences', JSON.stringify(updatedPreferences));
+   };
+
    return (
       <>
          <Header />
-         <section class="banners" style={{ backgroundImage: `url(${'../../images/banners_bg.webp'})` }}>
-            <div class="container">
-               <div class="banner_head">
+         <section className="banners" style={{ backgroundImage: `url(${'../../images/banners_bg.webp'})` }}>
+            <div className="container">
+               <div className="banner_head">
                   <h1>My Preferences</h1>
                   <p>An enim nullam tempor sapien gravida donec enim ipsum <br /> porta justo  congue purus pretium ligula </p>
                </div>
-               <div class="bredcrub">
+               <div className="bredcrub">
                   <a href="index.html" target="_self"> Home </a><span> <img src="images/arrow.png" alt="arrow" /></span>
                   <p>My Preferences </p>
                </div>
             </div>
          </section>
-         <section class="my_preferences ptb60">
-            <div class="container">
-               <div class="preferences_box">
+         <section className="my_preferences ptb60">
+            <div className="container">
+               <div className="preferences_box">
                   <p><span><img src="images/Preferences/Smoking.svg" alt="Smoking" /></span>Smoking </p>
-                  <label class="switch">
-                     <input type="checkbox" required checked={preferences?.LikeSmoking} />
+                  <label className="switch">
+                     <input type="checkbox" checked={userPreferences?.LikeSmoking} onChange={handlePreferenceChange('LikeSmoking')} />
                      <span></span>
                   </label>
                </div>
-               <div class="preferences_box">
+               <div className="preferences_box">
                   <p><span><img src="images/Preferences/Air-conditioning.svg" alt="Air conditioning" /></span> Air conditioning </p>
-                  <label class="switch">
-                     <input type="checkbox" required checked={preferences?.HaveAirCondition} />
+                  <label className="switch">
+                     <input type="checkbox" checked={userPreferences?.HaveAirCondition} onChange={handlePreferenceChange('HaveAirCondition')} />
                      <span></span>
                   </label>
                </div>
-               <div class="preferences_box">
+               <div className="preferences_box">
                   <p><span><img src="images/Preferences/Music.svg" alt="Music" /></span> Music </p>
-                  <label class="switch">
-                     <input type="checkbox" required checked={preferences?.LikeMusic} />
+                  <label className="switch">
+                     <input type="checkbox" checked={userPreferences?.LikeMusic} onChange={handlePreferenceChange('LikeMusic')} />
                      <span></span>
                   </label>
                </div>
-               <div class="preferences_box">
+               <div className="preferences_box">
                   <p><span><img src="images/Preferences/Chating.svg" alt="Chating" /></span> Chating </p>
-                  <label class="switch">
-                     <input type="checkbox" required checked={preferences?.LikeSpeaking} />
+                  <label className="switch">
+                     <input type="checkbox" checked={userPreferences?.LikeSpeaking} onChange={handlePreferenceChange('LikeSpeaking')} />
                      <span></span>
                   </label>
                </div>
-               <div class="preferences_box">
+               <div className="preferences_box">
                   <p><span><img src="images/Preferences/car-charger.svg" alt="car charger" /></span> car charger </p>
-                  <label class="switch">
-                     <input type="checkbox" required checked={preferences?.HaveChargeMobile} />
+                  <label className="switch">
+                     <input type="checkbox" checked={userPreferences?.HaveChargeMobile} onChange={handlePreferenceChange('HaveChargeMobile')} />
                      <span></span>
                   </label>
                </div>
-               <div class="preferences_box">
+               <div className="preferences_box">
                   <p> <span><img src="images/Preferences/suitcase.svg" alt="suitcase" /></span> suitcase</p>
-                  <label class="switch">
-                     <input type="checkbox" required checked={preferences?.LikePets} />
+                  <label className="switch">
+                     <input type="checkbox" checked={userPreferences?.LikePets} onChange={handlePreferenceChange('LikePets')} />
                      <span></span>
                   </label>
                </div>
-               <div class="preferences_box">
+               <div className="preferences_box">
                   <p> <span><img src="images/Preferences/Wifi.svg" alt="Wifi" /></span> Wifi </p>
-                  <label class="switch">
-                     <input type="checkbox" required checked={preferences?.HaveWifi} />
+                  <label className="switch">
+                     <input type="checkbox" checked={userPreferences?.HaveWifi} onChange={handlePreferenceChange('HaveWifi')} />
                      <span></span>
                   </label>
                </div>
-               <div class="preferences_box">
+               <div className="preferences_box">
                   <p> <span><img src="images/Preferences/Display-Screen.svg" alt="Smoking" /></span> Display Screen </p>
-                  <label class="switch">
-                     <input type="checkbox" required checked={preferences?.DeliverPost} />
+                  <label className="switch">
+                     <input type="checkbox" checked={userPreferences?.DeliverPost} onChange={handlePreferenceChange('DeliverPost')} />
                      <span></span>
                   </label>
                </div>
@@ -83,7 +100,7 @@ function MyPreferences() {
          </section>
          <Footer />
       </>
-   )
+   );
 }
 
-export default MyPreferences
+export default MyPreferences;

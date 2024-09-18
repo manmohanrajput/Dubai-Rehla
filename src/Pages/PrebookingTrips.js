@@ -68,8 +68,8 @@ function PrebookingTrips() {
                   <p>An enim nullam tempor sapien gravida donec enim ipsum <br /> porta justo  congue purus pretium ligula </p>
                </div>
                <div class="bredcrub">
-                  <a href="index.html" target="_self"> Home </a><span> <img src="images/arrow.png" alt="arrow" /></span>
-                  <p>Prebooking Trips </p>
+                  <a href="index.html" target="_self"> {t('header.home')} </a><span> <img src="images/arrow.png" alt="arrow" /></span>
+                  <p>{t('header.prebooking')}  </p>
                </div>
             </div>
          </section>

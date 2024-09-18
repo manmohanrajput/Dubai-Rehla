@@ -1,7 +1,7 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
-const savedLanguage = localStorage.getItem("i18nextLng") || "ur";
+const savedLanguage = localStorage.getItem("i18nextLng") || "en";
 
 i18n.use(initReactI18next).init({
   resources: {
@@ -356,13 +356,17 @@ i18n.use(initReactI18next).init({
       },
     },
   },
-  lng: savedLanguage,
-  lng: "en", // default language
-  fallbackLng: "en",
+  lng: savedLanguage, // Use the saved language from localStorage
+  fallbackLng: "en", // Fallback to English if language not found
 
   interpolation: {
     escapeValue: false, // React already escapes content
   },
+});
+
+// Listen for language changes and store them in localStorage
+i18n.on('languageChanged', (lng) => {
+  localStorage.setItem('i18nextLng', lng);
 });
 
 export default i18n;

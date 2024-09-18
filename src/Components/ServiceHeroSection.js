@@ -17,7 +17,7 @@ function ServiceHeroSection() {
 				<p>An enim nullam tempor sapien gravida donec enim ipsum <br/> porta justo  congue purus pretium ligula </p>
 			</div>
 			<div class="bredcrub">
-				<a href="index.html" target="_self"> Home </a><span> {">"}</span> <p>Services </p>
+				<a href="index.html" target="_self">{t('header.home')}</a><span> {">"}</span> <p>{t('header.services')}</p>
 			</div>
 		</div>
 	</section>
