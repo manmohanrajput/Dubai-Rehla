@@ -10,7 +10,7 @@ function MyRates() {
 
    const { t } = useTranslation();
 
-   // const dispatch= useDispatch()
+   const dispatch= useDispatch()
    // const {userDetails} = useSelector((state) => state.userStore);
    // useEffect(()=>{
    //   dispatch(getMyRates({id:userDetails?.Id}))
