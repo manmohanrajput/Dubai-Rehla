@@ -9,11 +9,11 @@ import { useTranslation } from 'react-i18next';
 function MyRates() {
 
    const { t } = useTranslation();
-   const dispatch= useDispatch()
-   const {userDetails} = useSelector((state) => state.userStore);
-   useEffect(()=>{
-     dispatch(getMyRates({id:userDetails?.Id}))
-   },[])
+   // const dispatch= useDispatch()
+   // const {userDetails} = useSelector((state) => state.userStore);
+   // useEffect(()=>{
+   //   dispatch(getMyRates({id:userDetails?.Id}))
+   // },[])
 
 
   return (
@@ -71,8 +71,8 @@ function MyRates() {
          <h5>Rates:</h5>
          <div class="reviewer_comments">
             <div class="Comments_details reviewer_content">
-               <img src="images/handsome-businessman.webp" alt="client_img" />
-                  <div class="comment_contant">
+            <img src="images/handsome-businessman.webp" alt="client_img" />
+            <div class="comment_contant">
                      <p>Leading an organization is incredibly rewarding and equally humbling. Confidence and humility. Every success is rewarding. 
                         <span><img src="images/4-star.svg" class="yello" /></span>
                      </p>
@@ -85,8 +85,8 @@ function MyRates() {
          </div>
          <div class="reviewer_comments">
             <div class="Comments_details reviewer_content">
-               <img src="images/mand-holding.webp" alt="client_img" />
-                  <div class="comment_contant">
+            <img src="images/mand-holding.webp" alt="client_img" />
+            <div class="comment_contant">
                      <p>Leading an organization is incredibly rewarding and equally humbling. Confidence and humility. Every success is rewarding. 
                         <span><img src="images/4-star.svg" class="yello" /></span>
                      </p>
