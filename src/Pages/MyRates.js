@@ -3,25 +3,30 @@ import Header from '../Components/Header/Header'
 import Footer from '../Components/Footer/Footer'
 import { useDispatch, useSelector } from 'react-redux'
 import { getMyRates } from '../actions/tripAction'
+import { useTranslation } from 'react-i18next';
+
 
 function MyRates() {
-   const dispatch= useDispatch()
-   const {userDetails} = useSelector((state) => state.userStore);
-   useEffect(()=>{
-     dispatch(getMyRates({id:userDetails?.Id}))
-   },[])
+
+   const { t } = useTranslation();
+
+   // const dispatch= useDispatch()
+   // const {userDetails} = useSelector((state) => state.userStore);
+   // useEffect(()=>{
+   //   dispatch(getMyRates({id:userDetails?.Id}))
+   // },[])
   return (
     <>
         <Header/>
         <section class="banners" style={{backgroundImage: `url(${'../../images/banners_bg.webp'})`}}>
       <div class="container">
          <div class="banner_head">
-            <h1>My Rates</h1>
+            <h1>{t('header.myRates')}</h1>
             <p>An enim nullam tempor sapien gravida donec enim ipsum <br/> porta justo  congue purus pretium ligula </p>
          </div>
          <div class="bredcrub">
-            <a href="index.html" target="_self"> Home </a><span> <img src="images/arrow.png" alt="arrow"/></span> 
-            <p>My Rates</p>
+            <a href="index.html" target="_self">{t('header.home')}</a><span> <img src="images/arrow.png" alt="arrow"/></span> 
+            <p>{t('header.myRates')}</p>
          </div>
       </div>
    </section>
@@ -30,9 +35,9 @@ function MyRates() {
          <div class="star_review">
             <p class="total_star">
                <span class="star"><img src="images/star.svg" class="yello" /> </span>
-               <span class="star_count">(4.5) </span> Total rates
+               <span class="star_count">(4.5) </span> {t('dropdown.totalReview')}
             </p>
-            <p class="total_review">30  reviews</p>
+            <p class="total_review">30  {t('dropdown.Review')}</p>
          </div>
          <div class="star_grid">
             <div class="star_box">

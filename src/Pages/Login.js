@@ -11,12 +11,17 @@ import LocalError from '../Components/Error/validationError'
 import { signInAction } from '../actions/authAction'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next';
+
 
 function Login() {
+   const { t } = useTranslation();
+
    const [showPassword, setShowPassword] = useState(false);
    const dispatch= useDispatch()
    const navigate= useNavigate()
    const handleSubmitForm=async(values)=>{
+
       
 
             await dispatch(signInAction({...values},navigate))
@@ -40,7 +45,7 @@ function Login() {
          </div>
          <div class="account_content">
             <img src="images/form_company_logo.webp" alt="company logo image" />
-            <h2 class="box_heading">Login to you account</h2>
+            <h2 class="box_heading">{t('userLogin.Heading')}</h2>
 
             <Formik
         initialValues={{ country_code:"+966",PhoneNumber: "1234567890",Password:"12345678",remember_me:false }}
@@ -63,7 +68,7 @@ function Login() {
        })=>(
          <form class="login_account"  onSubmit={handleSubmit} id="login_form">
          <div class="form_group ">
-             <label for="phone">Phone Number*</label>
+             <label for="phone">{t('userLogin.phonenumber')}</label>
              <div class="phone_box">
                 <select id="country_code" name="country_code" value={values?.country_code} onChange={handleChange}>
                     <option value="+965">+965</option>
@@ -75,7 +80,7 @@ function Login() {
                 <LocalError touched={touched.PhoneNumber} error={errors.PhoneNumber} />
          </div>
          <div class="form_group">
-             <label for="password">Password*</label>
+             <label for="password">{t('userLogin.passWord')}</label>
              <div class="password_box">
                  <input  type={showPassword ? "text" : "password"}  name="Password" class="password_input"  onChange={handleChange} placeholder="Password" required/>
                  {/* <span class="show_password" onclick="togglePassword()">👁️</span> */}
@@ -86,13 +91,13 @@ function Login() {
          <div class="form_group remember_me">
             <div class="remember_box">
                   <input type="checkbox" id="remember_me" name="remember_me" onChange={handleChange} checked={values?.remember_me}/>
-                  <label for="remember_me">Remember me</label>
+                  <label for="remember_me">{t('userLogin.remeber')}</label>
             </div>
-             <a href="#/forget-password" class="forgot_password">Forgot password?</a>
+             <a href="#/forget-password" class="forgot_password">{t('userLogin.forget')}</a>
          </div>
-         <button type="submit" class="login_button" value="Login Now">Login Now</button>
+         <button type="submit" class="login_button" value="Login Now">{t('userLogin.loginNow')}</button>
          <div class="create_account">
-             <p><span>Don't have an account? </span><a href="#/registration">Create New account</a></p>
+             <p><span>{t('userLogin.DontHave')} </span><a href="#/registration">{t('userLogin.CreateNew')}</a></p>
          </div>
       </form>
       )}

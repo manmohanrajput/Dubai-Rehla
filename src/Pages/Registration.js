@@ -8,18 +8,21 @@ import LocalError from "../Components/Error/validationError";
 import { useDispatch } from "react-redux";
 import { signUpAction } from "../actions/authAction";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function Registration() {
+  const { t } = useTranslation();
+
   const [showPass, setShowPass] = useState(false);
-  const dispatch= useDispatch()
-  const navigate= useNavigate()
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const handleSubmitForm = async (values) => {
-   
-   await dispatch(signUpAction({...values,Gender:values?.Gender==="male"},navigate))
+    await dispatch(
+      signUpAction({ ...values, Gender: values?.Gender === "male" }, navigate)
+    );
   };
 
   const handleProfilePhoto = async (e, setFieldValue) => {
-
     const file = e.target.files[0];
     const base64 = await convertBase64(file);
     setFieldValue("ProfilePhoto", base64);
@@ -38,7 +41,7 @@ function Registration() {
             </div>
           </div>
           <div class="account_content">
-            <h2 class="box_heading">Create New Account</h2>
+            <h2 class="box_heading">{t("Registration.createNew")}</h2>
             <Formik
               enableReinitialize
               initialValues={{
@@ -54,7 +57,7 @@ function Registration() {
                 Gender: "male",
                 ProfilePhoto: "",
               }}
-                validationSchema={signUpSchema}
+              validationSchema={signUpSchema}
               onSubmit={async (values, { setSubmitting, resetForm }) => {
                 setSubmitting(true);
                 await handleSubmitForm(values);
@@ -66,11 +69,10 @@ function Registration() {
                 values,
                 errors,
                 touched,
-              
+
                 handleChange,
                 setFieldValue,
                 handleSubmit,
-                
               }) => (
                 <form
                   class="login_account create_form"
@@ -103,7 +105,7 @@ function Registration() {
                     </div>
                   </div>
                   <div class="form_group">
-                    <label for="fullName">Full Name*</label>
+                    <label for="fullName">{t("Registration.FullName")}</label>
                     <input
                       type="text"
                       id="fullName"
@@ -112,11 +114,11 @@ function Registration() {
                       value={values?.Name}
                       onChange={handleChange}
                     />
-                    
+
                     <LocalError touched={touched.Name} error={errors.Name} />
                   </div>
                   <div class="form_group ">
-                    <label for="phone">Phone Number*</label>
+                    <label for="phone">{t("Registration.PhoneNumber")}</label>
                     <div class="phone_box">
                       <select
                         id="country_code"
@@ -162,7 +164,7 @@ function Registration() {
                     </div>
                   </div>
                   <div class="form_group">
-                    <label for="email">Email*</label>
+                    <label for="email">{t("Registration.Email")}</label>
                     <input
                       type="email"
                       id="email"
@@ -174,7 +176,7 @@ function Registration() {
                     <LocalError touched={touched.Email} error={errors.Email} />
                   </div>
                   <div class="form_group">
-                    <label for="password">Password*</label>
+                    <label for="password">{t("Registration.Password")}</label>
                     <div class="password_box">
                       <input
                         type={showPass ? "text" : "password"}
@@ -203,7 +205,7 @@ function Registration() {
                     />
                   </div>
                   <div class="form_group birth_date">
-                    <label for="dob">Date of Birth*</label>
+                    <label for="dob">{t("Registration.DateofBirth")}</label>
                     <input
                       type="date"
                       id="DateOfBirth"
@@ -218,7 +220,7 @@ function Registration() {
                     />
                   </div>
                   <div class="form_group gender gender_select">
-                    <label>Gender*</label>
+                    <label>{t("Registration.Gender")}</label>
                     <div class="gender_options">
                       <label>
                         <input
@@ -247,12 +249,15 @@ function Registration() {
                     </div>
                   </div>
                   <button type="submit" class="login_button register_btn">
-                    Register Now
+                    {t("Registration.RegisterNow")}
                   </button>
                   <div class="create_account">
-                    <p onClick={()=>navigate("/login")}>
-                      Already have an account?{" "}
-                      <a href="javascript:void(0)">Login Now</a>
+                    <p onClick={() => navigate("/login")}>
+                      {t("Registration.Already")}{" "}
+                      <a href="javascript:void(0)">
+                        {" "}
+                        {t("Registration.LoginNow")}
+                      </a>
                     </p>
                   </div>
                 </form>

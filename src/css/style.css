@@ -3471,3 +3471,144 @@ box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1
   place-content: center;
 
 }
+
+
+
+
+/* General container styles */
+.my_rates {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.review_form {
+  margin-top: 30px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.review_form h5 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.review_form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.review_form textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  resize: none;
+}
+
+.review_form select {
+  width: 150px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.review_form button {
+  width: 150px;
+  padding: 10px;
+  background-color:  #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.review_form button:hover {
+  background-color:  #3498db;
+}
+
+/* Styles for reviews display */
+.rates_container {
+  margin-top: 40px;
+}
+
+.reviewer_comments {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.reviewer_content {
+  display: flex;
+  gap: 20px;
+}
+
+.comment_contant {
+  max-width: 800px;
+}
+
+.comment_contant p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.comment_contant img {
+  width: 20px;
+  margin-left: 5px;
+}
+
+.client_name h5 {
+  font-size: 18px;
+  color: #333;
+}
+
+.client_name p {
+  font-size: 14px;
+  color: #777;
+}
+
+/* Star styles */
+.star {
+  display: inline-block;
+}
+
+.star img {
+  width: 20px;
+  height: 20px;
+}
+
+.star.yello img {
+  fill: #ffc107;
+}
+
+.star.gray img {
+  fill: #ccc;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .review_form form {
+    flex-direction: column;
+  }
+
+  .reviewer_comments {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .comment_contant {
+    max-width: 100%;
+  }
+}

@@ -25,8 +25,73 @@ i18n.use(initReactI18next).init({
           myPreferences: "My Preferences", // Added
           verification: "Verification", // Added
           notification: "Notification", // Added
-          registerAsTraveler: "Register as Traveler", // Added
+          registerAsTraveler: "Register as a Traveler", // Added
           logout: "Logout", // Added
+          Login: "Login",
+        },
+
+        //Loginpage
+        userLogin: {
+          Heading: "Login to you account",
+          phonenumber: "Phone Number*",
+          passWord: "Password*",
+          remeber: "Remember me",
+          forget: "Forgot password?",
+          loginNow: "Login Now",
+          DontHave: "Don't have an account?",
+          CreateNew: "Create New Account",
+        },
+        //Registration
+        Registration: {
+          createNew: "Create New Account",
+          FullName: "Full Name*",
+          PhoneNumber: "Phone Number*",
+          Email: "Email*",
+          Password: "Password*",
+          DateofBirth: "Date of Birth*",
+          Gender: "Gender*",
+          RegisterNow: "Register Now",
+          Already: "Already have an account?",
+          LoginNow: "Login Now",
+        },
+
+        /////login dropdown
+        dropdown: {
+          //editpro
+          fullname: "Full Name*",
+          phone: "Phone Number*",
+          email: "Email*",
+          dob: "Date of Birth*",
+          Gender: "Gender*",
+          editprobutton: "Edit profile",
+
+          //mytrip
+          Gotrip: "Go Trip",
+
+          //myWallet
+          Walletbalance: "Wallet balance",
+          Wallethistory: "Wallet history",
+          Addbalance: "Add balance",
+          Withdrawbalance: "Withdraw a balance",
+
+          //myrates
+          totalReview: "Total rates",
+          Review: "reviews",
+
+          //mypreffrence
+          smoking: "Smoking",
+          airCondistioning: "Air Conditioning",
+          Music: "Music",
+          chating: "Chating",
+          carCharger: "Car Charger",
+          suitcase: "Suitcase",
+          wifi: "Wifi",
+          displayScreen: "Display Screen",
+
+          //varification
+          phoneNumber: "Phone Number",
+          Emailaddress: "Email-address",
+          IDcard: "ID card",
         },
 
         //Home Page
@@ -45,42 +110,44 @@ i18n.use(initReactI18next).init({
           startTrip: "Start Your ride Now",
           offerUp: "Offer up to 30% for each ride",
 
-          Signup:"Sign up",
-          addingcar:"in Rehla and adding car",
-          Trainingvideo:"Training video explaining how to create an account in Rehla, fill in the registration data, and view the login method if you already have an account in Rehla. How to register your car information to be reviewed and registered in Rehla application as a captain, as you can know your balance through the wallet.Watch",
+          Signup: "Sign up",
+          addingcar: "in Rehla and adding car",
+          Trainingvideo:
+            "Training video explaining how to create an account in Rehla, fill in the registration data, and view the login method if you already have an account in Rehla. How to register your car information to be reviewed and registered in Rehla application as a captain, as you can know your balance through the wallet.Watch",
 
-          Create:"Create and ordering a trip",
-          explanation:"explanation of how to use Rehla app How to create a ride-sharing trip by the captain and search for them by the passenger, and the possibility of requesting a prior reservation for the ride-sharing trip, How to request a ride-hailing trip inside the city and how to receive the request by Rehla captains.",
+          Create: "Create and ordering a trip",
+          explanation:
+            "explanation of how to use Rehla app How to create a ride-sharing trip by the captain and search for them by the passenger, and the possibility of requesting a prior reservation for the ride-sharing trip, How to request a ride-hailing trip inside the city and how to receive the request by Rehla captains.",
 
-
-          join:"Join tourism experts as a",
-          Traveler:"Traveler",
+          join: "Join tourism experts as a",
+          Traveler: "Traveler",
           Rehla: "Rehla",
 
-          firstStep:"First Step",
-          secondStep:"Second Step",
-          thirdStep:"Third Step",
+          firstStep: "First Step",
+          secondStep: "Second Step",
+          thirdStep: "Third Step",
 
-          first:"Please Click on the Join Now and fill in your data as a tourist traveler",
-          second:"Fill out your tourism information form",
-          third:"After reviewing our data, you will be able to create tours",
+          first:
+            "Please Click on the Join Now and fill in your data as a tourist traveler",
+          second: "Fill out your tourism information form",
+          third: "After reviewing our data, you will be able to create tours",
 
-          book:"Book your prebooking",
-          trip:"trip now",
-          login:"Login with your account for Rehla or create an account for the first time through our website or App",
-          goto:"Go to Prebooking Trips",
-          select:"Select your destination and departure date and book now and wait for your offer to be accepted by one of our captains",
+          book: "Book your prebooking",
+          trip: "trip now",
+          login:
+            "Login with your account for Rehla or create an account for the first time through our website or App",
+          goto: "Go to Prebooking Trips",
+          select:
+            "Select your destination and departure date and book now and wait for your offer to be accepted by one of our captains",
 
-          Featuredcoures:"Featured coures",
-          Charge:"Charge Cards Now",
+          Featuredcoures: "Featured coures",
+          Charge: "Charge Cards Now",
           price: "Price",
-          Chargewallet:"Charge wallet",
+          Chargewallet: "Charge wallet",
 
-          screenShot:"screenshots",
+          screenShot: "screenshots",
 
-          clentSay:"What clients are saying"
-
-
+          clentSay: "What clients are saying",
         },
         rehlaServiceSection: {
           rehlaServiceTitle: "Rehla",
@@ -200,57 +267,125 @@ i18n.use(initReactI18next).init({
           notification: "إشعار", // Added
           registerAsTraveler: "سجل كمسافر", // Added
           logout: "تسجيل الخروج",
+          Login: "تسجيل الدخول",
         },
+
+        //Loginpage
+        userLogin: {
+          Heading: "تسجيل الدخول إلى حسابك",
+          phonenumber: "رقم التليفون",
+          passWord: "كلمة المرور",
+          remeber: "تذكرنى",
+          forget: "هل نسيت كلمة السر؟",
+          loginNow: "تسجيل الدخول الآن",
+          DontHave: "ليس لديك حساب؟",
+          CreateNew: "إنشاء حساب جديد",
+        },
+
+        //Registration
+        Registration: {
+          createNew: "إنشاء حساب جديد",
+          FullName: "الاسم الكامل",
+          PhoneNumber: "رقم التليفون",
+          Email: "بريد إلكتروني",
+          Password: "كلمة المرور",
+          DateofBirth: "تاريخ الميلاد",
+          Gender: "جنس",
+          RegisterNow: "سجل الآن",
+          Already: "هل لديك حساب بالفعل؟",
+          LoginNow: "تسجيل الدخول الآن",
+        },
+
+        /////login dropdown
+        dropdown: {
+          //editpro
+          fullname: "الاسم الكامل*",
+          phone: "رقم التليفون*",
+          email: "بريد إلكتروني*",
+          dob: "تاريخ الميلاد*",
+          Gender: "جنس*",
+          editprobutton: "تحرير الملف الشخصي",
+
+          //myTrip
+          Gotrip: "اذهب للرحلة",
+
+          //myWallet
+          Walletbalance: "رصيد المحفظة",
+          Wallethistory: "تاريخ المحفظة",
+          Addbalance: "إضافة الرصيد",
+          Withdrawbalance: "سحب الرصيد",
+
+          //myrates
+          totalReview: "إجمالي الأسعار",
+          Review: "المراجعات",
+
+          //mypreffrence
+          smoking: "تدخين",
+          airCondistioning: "تكييف الهواء",
+          Music: "موسيقى",
+          chating: "الدردشة",
+          carCharger: "شاحن سيارة",
+          suitcase: "حقيبة",
+          wifi: "واي فاي",
+          displayScreen: "شاشة العرض",
+
+          //varification
+          phoneNumber: "رقم التليفون",
+          Emailaddress: "عنوان البريد الإلكتروني",
+          IDcard: "بطاقة الهوية",
+        },
+
         //home
         heroSection: {
-          heroTitle:
-            "تطبيق رحلة هو أفضل تطبيق لحجز الرحلات ومشاركة الرحلات",
+          heroTitle: "تطبيق رحلة هو أفضل تطبيق لحجز الرحلات ومشاركة الرحلات",
           heroDescription:
             "رحلة هي خدمة مشاركة الرحلات وخدمة نقل الركاب التي تربط بين الركاب وأصحاب المركبات المتجهين إلى نفس الوجهة.",
 
           AboutReh: "حول رحلة",
           Rehla: "رحلة",
           RehlaIntro: "إدخال ترويج الفيديو",
-          RehDes:"تطبيق رحلة .... متعة السفر بين المدن بأقل تكلفة وأمان أكثر يقدم موقع رحلة تجربة سفر فريدة بين المدن بأقل تكلفة وبأكثر الطرق متعة وأمان. تطبيق رحلة مرخص من هيئة النقل العام ومتوافق مع كافة متطلبات السلامة والأمن في المملكة العربية السعودية، ويقوم على مبدأ تقاسم تكاليف السفر بين الركاب وأصحاب المركبات.",
+          RehDes:
+            "تطبيق رحلة .... متعة السفر بين المدن بأقل تكلفة وأمان أكثر يقدم موقع رحلة تجربة سفر فريدة بين المدن بأقل تكلفة وبأكثر الطرق متعة وأمان. تطبيق رحلة مرخص من هيئة النقل العام ومتوافق مع كافة متطلبات السلامة والأمن في المملكة العربية السعودية، ويقوم على مبدأ تقاسم تكاليف السفر بين الركاب وأصحاب المركبات.",
           startTrip: "ابدأ رحلتك الآن",
           offerUp: "عرض يصل إلى 30% لكل رحلة",
 
-          Signup:"اشتراك",
-          addingcar:"في رحلة وإضافة سيارة",
-          Trainingvideo:"فيديو تدريبي يشرح كيفية إنشاء حساب في رحلة، وتعبئة بيانات التسجيل، وعرض طريقة تسجيل الدخول إذا كان لديك حساب في رحلة بالفعل. كيفية تسجيل معلومات سيارتك لمراجعتها وتسجيلها في تطبيق رحلة ككابتن، كما يمكنك معرفة رصيدك من خلال المحفظة.شاهد",
+          Signup: "اشتراك",
+          addingcar: "في رحلة وإضافة سيارة",
+          Trainingvideo:
+            "فيديو تدريبي يشرح كيفية إنشاء حساب في رحلة، وتعبئة بيانات التسجيل، وعرض طريقة تسجيل الدخول إذا كان لديك حساب في رحلة بالفعل. كيفية تسجيل معلومات سيارتك لمراجعتها وتسجيلها في تطبيق رحلة ككابتن، كما يمكنك معرفة رصيدك من خلال المحفظة.شاهد",
 
-          Create:"إنشاء وطلب رحلة",
-          explanation:"شرح كيفية استخدام تطبيق رحلة، كيفية إنشاء رحلة مشاركة من قبل الكابتن والبحث عنها من قبل الراكب، وإمكانية طلب حجز مسبق لرحلة المشاركة، كيفية طلب رحلة مشاركة من الداخل المدينة وكيفية استقبال الطلب من قبل رحلة الكباتن.",
+          Create: "إنشاء وطلب رحلة",
+          explanation:
+            "شرح كيفية استخدام تطبيق رحلة، كيفية إنشاء رحلة مشاركة من قبل الكابتن والبحث عنها من قبل الراكب، وإمكانية طلب حجز مسبق لرحلة المشاركة، كيفية طلب رحلة مشاركة من الداخل المدينة وكيفية استقبال الطلب من قبل رحلة الكباتن.",
 
-          
-          join:"انضم إلى خبراء السياحة ك",
-          Traveler:"مسافر",
-          Rehla: "رحلة",  //////////////////pen
+          join: "انضم إلى خبراء السياحة ك",
+          Traveler: "مسافر",
+          Rehla: "رحلة", //////////////////pen
 
-          firstStep:"الخطوة الأولى",
-          secondStep:"الخطوة الثانية",
-          thirdStep:"الخطوة الثالثة",
+          firstStep: "الخطوة الأولى",
+          secondStep: "الخطوة الثانية",
+          thirdStep: "الخطوة الثالثة",
 
-          first:"من فضلك اضغط على انضم الآن واملأ بياناتك كسائح",
-          second:"املأ نموذج المعلومات السياحية الخاص بك",
-          third:"بعد مراجعة بياناتنا، ستتمكن من إنشاء جولات",
+          first: "من فضلك اضغط على انضم الآن واملأ بياناتك كسائح",
+          second: "املأ نموذج المعلومات السياحية الخاص بك",
+          third: "بعد مراجعة بياناتنا، ستتمكن من إنشاء جولات",
 
-          book:"احجز حجزك المسبق",
-          trip:"رحلة الآن",
-          login:"قم بتسجيل الدخول بحسابك الخاص برحلة أو قم بإنشاء حساب لأول مرة عبر موقعنا أو تطبيقنا",
-          goto:"اذهب إلى الحجز المسبق للرحلات",
-          select:"حدد وجهتك وتاريخ المغادرة واحجز الآن وانتظر حتى يتم قبول عرضك من قبل أحد الكباتن لدينا",
+          book: "احجز حجزك المسبق",
+          trip: "رحلة الآن",
+          login:
+            "قم بتسجيل الدخول بحسابك الخاص برحلة أو قم بإنشاء حساب لأول مرة عبر موقعنا أو تطبيقنا",
+          goto: "اذهب إلى الحجز المسبق للرحلات",
+          select:
+            "حدد وجهتك وتاريخ المغادرة واحجز الآن وانتظر حتى يتم قبول عرضك من قبل أحد الكباتن لدينا",
 
-          Featuredcoures:"دورات مميزة",
-          Charge:"اشحن بطاقات رحلة الآن",
+          Featuredcoures: "دورات مميزة",
+          Charge: "اشحن بطاقات رحلة الآن",
           price: "سعر",
-          Chargewallet:"شحن المحفظة",
+          Chargewallet: "شحن المحفظة",
 
-          screenShot:"لقطات الشاشة",
+          screenShot: "لقطات الشاشة",
 
-          clentSay:"ما يقوله العملاء"
-
-
+          clentSay: "ما يقوله العملاء",
         },
         rehlaServiceSection: {
           rehlaServiceTitle: "رحلة",
@@ -340,7 +475,8 @@ i18n.use(initReactI18next).init({
           sitemap: "خريطة الموقع",
           usefulLinks: "روابط مفيدة",
           contactInfo: "معلومات الاتصال",
-          address: "455 شارع ويست أوركارد، كينغز ماونتن، كارولاينا الشمالية 280867",
+          address:
+            "455 شارع ويست أوركارد، كينغز ماونتن، كارولاينا الشمالية 280867",
           phone: "+088 (246) 642-27-10",
           email: "example@gmail.com",
           home: "بيت",
@@ -365,8 +501,8 @@ i18n.use(initReactI18next).init({
 });
 
 // Listen for language changes and store them in localStorage
-i18n.on('languageChanged', (lng) => {
-  localStorage.setItem('i18nextLng', lng);
+i18n.on("languageChanged", (lng) => {
+  localStorage.setItem("i18nextLng", lng);
 });
 
 export default i18n;

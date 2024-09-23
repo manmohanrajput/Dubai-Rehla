@@ -162,7 +162,7 @@ function Header() {
               ) : (
                 <li>
                   <Link to="/login" className="login">
-                    {t("Login")}
+                    {t("header.Login")}
                   </Link>
                 </li>
               )}

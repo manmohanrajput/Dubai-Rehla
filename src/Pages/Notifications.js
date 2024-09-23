@@ -1,20 +1,23 @@
 import React from 'react'
 import Header from '../Components/Header/Header'
 import Footer from '../Components/Footer/Footer'
+import { useTranslation } from 'react-i18next';
 
 function Notifications() {
+   const { t } = useTranslation();
+
   return (
    <>
     <Header/>
     <section class="banners" style={{backgroundImage: `url(${'../../images/banners_bg.webp'})`}}>
       <div class="container">
          <div class="banner_head">
-            <h1>Notification</h1>
+            <h1>{t('header.notification')}</h1>
             <p>An enim nullam tempor sapien gravida donec enim ipsum <br/> porta justo  congue purus pretium ligula </p>
          </div>
          <div class="bredcrub">
-            <a href="index.html" target="_self"> Home </a><span> <img src="images/arrow.png" alt="arrow"/></span> 
-            <p>Notification</p>
+            <a href="index.html" target="_self"> {t('header.home')} </a><span> <img src="images/arrow.png" alt="arrow"/></span> 
+            <p>{t('header.notification')}</p>
          </div>
       </div>
    </section>

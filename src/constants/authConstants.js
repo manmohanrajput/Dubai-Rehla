@@ -20,6 +20,7 @@ export const APICONSTANTS = {
     addTransaction: (CardNumber) => `AddTransaction?CardNumber=${CardNumber}`,
     addWithdrawalRequest: "AddWithdrawalRequest",
     getBanks: "getBanks",
+    DriverComment:"RateADriver"
 }
 export const ROUTESCONSTANTS = {
     LOGIN: "/login",

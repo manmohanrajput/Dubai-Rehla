@@ -3,8 +3,11 @@ import Header from '../Components/Header/Header'
 import Footer from '../Components/Footer/Footer'
 import { registerTravelerSchema } from '../validationSchema/validationSchema';
 import { Formik } from 'formik';
+import { useTranslation } from 'react-i18next';
 
 function RegisterTraveler() {
+   const { t } = useTranslation();
+
 
     const handleSubmitForm = async (values) => {
         console.log({ values });
@@ -19,12 +22,12 @@ function RegisterTraveler() {
             <section class="banners" style={{ backgroundImage: `url(${'../../images/banners_bg.webp'})` }}>
                 <div class="container">
                     <div class="banner_head">
-                        <h1>Register as a traveler</h1>
+                        <h1>{t('header.registerAsTraveler')}</h1>
                         <p>An enim nullam tempor sapien gravida donec enim ipsum <br /> porta justo  congue purus pretium ligula </p>
                     </div>
                     <div class="bredcrub">
-                        <a href="index.html" target="_self"> Home </a><span> <img src="images/arrow.png" alt="arrow" /></span>
-                        <p>Register as a traveler</p>
+                        <a href="index.html" target="_self">{t('header.home')}</a><span> <img src="images/arrow.png" alt="arrow" /></span>
+                        <p>{t('header.registerAsTraveler')}</p>
                     </div>
                 </div>
             </section>

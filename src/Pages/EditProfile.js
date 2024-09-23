@@ -9,9 +9,13 @@ import { convertBase64 } from '../services/utils';
 import { updateProfileAction, updateProfileImageAction } from '../actions/authAction';
 import moment from 'moment/moment';
 import ProfileSpinner from '../Components/CustomLoader/profileSpinner';
+import { useTranslation } from 'react-i18next';
+
 
 
 function EditProfile() {
+   const { t } = useTranslation();
+
    const {userDetails,isUploading} = useSelector((state) => state.userStore);
    
    const dispatch= useDispatch()
@@ -39,12 +43,12 @@ function EditProfile() {
         <section class="banners" style={{backgroundImage: `url(${'../../images/banners_bg.webp'})`}}>
       <div class="container">
          <div class="banner_head">
-            <h1>Edit profile</h1>
+            <h1>{t('header.editProfile')}</h1>
             <p>An enim nullam tempor sapien gravida donec enim ipsum <br/> porta justo  congue purus pretium ligula </p>
          </div>
          <div class="bredcrub">
-            <a href="index.html" target="_self"> Home </a><span> <img src="images/arrow.png" alt="arrow"/></span> 
-            <p>Edit profile </p>
+            <a href="index.html" target="_self">{t('header.home')}</a><span> <img src="images/arrow.png" alt="arrow"/></span> 
+            <p>{t('header.editProfile')}</p>
          </div>
       </div>
    </section>
@@ -85,12 +89,12 @@ function EditProfile() {
                </div>
                <div class="edit_grid edit_box">
                   <div class="form_edit">
-                      <label for="fullName">Full Name*</label>
+                      <label for="fullName">{t('dropdown.fullname')}</label>
                       <input type="text" id="fullName" name="Name" placeholder="Enter Full Name" value={values?.Name} onChange={handleChange}/>
                   </div>
                   <LocalError touched={touched.Name} error={errors.Name} />
                   <div class=" form_edit">
-                         <label for="phone">Phone Number*</label>
+                         <label for="phone">{t('dropdown.phone')}</label>
                          <div class="phone_box">
                             <select id="country_code" name="PhoneKey" value={values?.PhoneKey} onChange={handleChange}>
                                 <option value="+965">+965</option>
@@ -104,17 +108,17 @@ function EditProfile() {
                </div>
                <div class="edit_grid">
                   <div class=" form_edit">
-                      <label for="email">Email*</label>
+                      <label for="email">{t('dropdown.email')}</label>
                       <input type="email" id="email" name="Email" placeholder="Enter Email" value={values?.Email} onChange={handleChange}/>
                       <LocalError touched={touched.Email} error={errors.Email} />
                   </div>
                   <div class=" form_edit edit_date birth_date">
-                     <label for="dob">Date of Birth*</label>
+                     <label for="dob">{t('dropdown.dob')}</label>
                      <input type="date" id="dob" name="DateOfBirth" placeholder="Select date of birth" value={moment(values?.DateOfBirth).format("yyyy-MM-DD")} onChange={handleChange}/>
                   </div>
                </div>      
                <div class="selection_box">               
-                  <label>Gender*</label>
+                  <label>{t('dropdown.Gender')}</label>
                   <div class="gender_selection">
                      <div class="genders_grid">
                         <input type="radio" name="Gender" checked={values?.Gender === "female"}
@@ -134,7 +138,7 @@ function EditProfile() {
                      </div>  
                   </div>
                </div>
-               <button type="submit" class="edit_sub">Edit profile</button>
+               <button type="submit" class="edit_sub">{t('dropdown.editprobutton')}</button>
             </form>
          )
          }

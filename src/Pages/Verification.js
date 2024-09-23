@@ -2,8 +2,12 @@ import React from 'react'
 import Header from '../Components/Header/Header'
 import Footer from '../Components/Footer/Footer'
 import { useLocation } from 'react-router-dom'
+import { useTranslation } from 'react-i18next';
+
 
 function Verification() {
+   const { t } = useTranslation();
+
 
   return (
 <>
@@ -13,12 +17,12 @@ function Verification() {
       <div class="container">
          <form class="varification_form" id="varification_form" name="varification_form" method="post" action="#"> 
             <div class="varification_grid">
-            <p>Verification</p>
+            <p>{t('header.verification')}</p>
                <div class="varification_proof">
                   <label for="num_varify" class="proof_contact">
                      <span> <img src="images/smartphone.svg"/></span>
                      <div class="contact_active">
-                        <p><strong>Phone Number</strong>
+                        <p><strong>{t('dropdown.phoneNumber')}</strong>
                            <a href="tel:01016171926"> 01016171926</a> </p>
                      </div>
                   </label>
@@ -28,7 +32,7 @@ function Verification() {
                   <label for="email_varify" class="proof_contact">
                      <span> <img src="images/mail-message.svg"/></span>
                      <div class="contact_active">
-                        <p><strong>Email-address</strong>
+                        <p><strong>{t('dropdown.Emailaddress')}</strong>
                            <a href="mailto:example@gmail.com"> example@gmail.com</a> </p>
                      </div>
                   </label>
@@ -38,7 +42,7 @@ function Verification() {
                   <label for="id_card" class="proof_contact">
                      <span> <img src="images/id-card.svg"/></span>
                      <div class="contact_active">
-                        <p><strong>ID card</strong>
+                        <p><strong>{t('dropdown.IDcard')}</strong>
                            <a href="javascript:void(0);">Identification card to increase confidence</a> </p>
                      </div>
                   </label>

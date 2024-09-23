@@ -72,6 +72,18 @@ export const getRatingsByUserId = async (formData) => {
     return handleApiError(error)
   }
 }
+
+export const DriverCommentRate = async (data) => {
+  try {
+    const res = await authInterceptor.post(APICONSTANTS.DriverComment(data));
+    return { error: null, data: res.data };
+  }
+  catch (error) {
+    return handleApiError(error)
+  }
+}
+
+
 export const GetTransactions = async (page = 1) => {
   try {
     const res = await authInterceptor.get(APICONSTANTS.getAllTransactions(page));

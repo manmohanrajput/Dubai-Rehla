@@ -1,20 +1,24 @@
 import React from 'react'
 import Footer from '../Components/Footer/Footer'
 import Header from '../Components/Header/Header'
+import { useTranslation } from 'react-i18next';
+
 
 function MyTrip() {
+   const { t } = useTranslation();
+
   return (
     <>
         <Header/>
         <section class="banners" style={{backgroundImage: `url(${'../../images/banners_bg.webp'})`}}>
       <div class="container">
          <div class="banner_head">
-            <h1>My Trip</h1>
+            <h1>{t('header.myTrips')}</h1>
             <p>An enim nullam tempor sapien gravida donec enim ipsum <br/> porta justo  congue purus pretium ligula </p>
          </div>
          <div class="bredcrub">
-            <a href="index.html" target="_self"> Home </a><span> <img src="images/arrow.png" alt="arrow"/></span> 
-            <p>My Trip</p>
+            <a href="index.html" target="_self">{t('header.home')}</a><span> <img src="images/arrow.png" alt="arrow"/></span> 
+            <p>{t('header.myTrips')}</p>
          </div>
       </div>
    </section>
