@@ -16,10 +16,10 @@ function Registration() {
   const [showPass, setShowPass] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   const handleSubmitForm = async (values) => {
-    await dispatch(
-      signUpAction({ ...values, Gender: values?.Gender === "male" }, navigate)
-    );
+    console.log(values);  // Debug the form values
+    await dispatch(signUpAction({ ...values }, navigate));
   };
 
   const handleProfilePhoto = async (e, setFieldValue) => {
@@ -27,6 +27,7 @@ function Registration() {
     const base64 = await convertBase64(file);
     setFieldValue("ProfilePhoto", base64);
   };
+
   return (
     <>
       <Header />
@@ -54,7 +55,7 @@ function Registration() {
                 PhoneNumber: "",
                 DateOfBirth: "",
                 CityId: 18,
-                Gender: "male",
+                Gender: "",  // No default gender selection
                 ProfilePhoto: "",
               }}
               validationSchema={signUpSchema}
@@ -69,7 +70,6 @@ function Registration() {
                 values,
                 errors,
                 touched,
-
                 handleChange,
                 setFieldValue,
                 handleSubmit,
@@ -114,7 +114,6 @@ function Registration() {
                       value={values?.Name}
                       onChange={handleChange}
                     />
-
                     <LocalError touched={touched.Name} error={errors.Name} />
                   </div>
                   <div class="form_group ">
@@ -125,6 +124,7 @@ function Registration() {
                         name="PhoneKey"
                         class="flag_select"
                         value={values?.PhoneKey}
+                        onChange={(e) => setFieldValue("PhoneKey", e.target.value)}  // Fix onChange
                       >
                         <option value="+965" class="flag_option">
                           <img src="images/flag.svg" alt="US Flag" width="20" />{" "}
@@ -152,8 +152,6 @@ function Registration() {
                         id="PhoneNumber"
                         name="PhoneNumber"
                         placeholder="Enter phone number"
-                        // maxlength="14"
-                        // minlength="14"
                         value={values?.PhoneNumber}
                         onChange={handleChange}
                       />
@@ -197,7 +195,6 @@ function Registration() {
                           <img src="images/show-icon.svg" class="show" />
                         )}{" "}
                       </span>
-                      {/* <!-- <span class="hide_password" ></span> --> */}
                     </div>
                     <LocalError
                       touched={touched.Password}
@@ -226,8 +223,9 @@ function Registration() {
                         <input
                           type="radio"
                           name="Gender"
-                          value={values?.Gender === "female"}
-                          onChange={handleChange}
+                          value="female"
+                          checked={values?.Gender === "female"}
+                          onChange={() => setFieldValue("Gender", "female")}
                         />
                         <span class="gender_cat">
                           Female
@@ -238,8 +236,9 @@ function Registration() {
                         <input
                           type="radio"
                           name="Gender"
-                          value={values?.Gender === "male"}
-                          onChange={handleChange}
+                          value="male"
+                          checked={values?.Gender === "male"}
+                          onChange={() => setFieldValue("Gender", "male")}
                         />
                         <span class="gender_cat">
                           Male
@@ -247,6 +246,7 @@ function Registration() {
                         </span>
                       </label>
                     </div>
+                    <LocalError touched={touched.Gender} error={errors.Gender} />
                   </div>
                   <button type="submit" class="login_button register_btn">
                     {t("Registration.RegisterNow")}
