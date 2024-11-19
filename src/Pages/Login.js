@@ -83,7 +83,7 @@ function Login() {
              <div class="password_box">
                  <input  type={showPassword ? "text" : "password"}  name="Password" class="password_input"  onChange={handleChange} placeholder="Password" required/>
                  {/* <span class="show_password" onclick="togglePassword()">👁️</span> */}
-                 <span className="show_password" onClick={togglePassword}> {showPassword ? "🙈" : "👁️"} </span>
+                 <span className="show_password" onClick={togglePassword}> {showPassword ? "👁️" : "🙈"} </span>
              </div>
              <LocalError touched={touched.Password} error={errors.Password} />
          </div>

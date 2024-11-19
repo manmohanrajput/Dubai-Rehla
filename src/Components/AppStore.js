@@ -17,8 +17,8 @@ function AppStore() {
                   <p> {t('AboutUspage.avaiDes')}<br/> {t('AboutUspage.avaiDes1')}</p>
                </div>
                <div class="app_store">
-                  <a href=""><img src="../../images/App-Store.webp"/> </a>
-                  <a href=""><img src="../../images/Play-Store.webp"/> </a>
+                  <a href="https://play.google.com/store/apps/details?id=com.NativeTech.rehla&hl=en&pli=1"><img src="../../images/App-Store.webp"/> </a>
+                  <a href="https://apps.apple.com/eg/app/%D8%B1%D8%AD%D9%84%D8%A9/id1453329743"><img src="../../images/Play-Store.webp"/> </a>
                </div>
          </div>
       </section>

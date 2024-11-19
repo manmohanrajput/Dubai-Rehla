@@ -134,6 +134,7 @@ function News() {
 
   const [currentPage, setCurrentPage] = useState(1);
   const [list, setList] = useState([]);
+  
 
   useEffect(() => {
     getAllAdvertisments();
@@ -159,17 +160,19 @@ function News() {
     // const selectedItems = listItems.slice(startIndex, startIndex + itemsPerPage);
 
     return selectedItems.map((item, index) => (
+      console.log("immm",item?.Image),
       <div className="list-item" key={index}>
-        {/* <a href={item.link}> */}
+        
         <a href={'#/news-details'}>
           <div className="news_img">
-            <img src={item?.Image} alt="news" />
+            <img src={item?.Image} alt={item?.Title} />
           </div>
           <ul className="autor_detail">
             <li><img src="images/news/admin.svg" alt="admin" />{item.admin || 'Admin'}</li>
             <li><img src="images/news/date.svg" alt="date" />{moment(item.ExpirationDate).format('DD MMM YYYY')}</li>
           </ul>
           <div className="recent_content">
+          
             <h3>{item.Title}</h3>
             <p>{item.Description}</p>
             <span>Read More</span>

@@ -12,39 +12,44 @@ import { useTranslation } from "react-i18next";
 
 function Registration() {
   const { t } = useTranslation();
-
   const [showPass, setShowPass] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleSubmitForm = async (values) => {
-    console.log(values);  // Debug the form values
-    await dispatch(signUpAction({ ...values }, navigate));
+    console.log(values);  // Debug the form values to ensure everything is correct
+    await dispatch(signUpAction(values, navigate));
   };
 
   const handleProfilePhoto = async (e, setFieldValue) => {
     const file = e.target.files[0];
-    const base64 = await convertBase64(file);
-    setFieldValue("ProfilePhoto", base64);
+
+    if (file) {
+      try {
+        const base64 = await convertBase64(file);
+        setFieldValue("ProfilePhoto", base64);  // Set the base64 image value
+      } catch (error) {
+        console.error("Error converting file to Base64:", error);
+      }
+    }
   };
 
   return (
     <>
       <Header />
-      <section class="my_account account_create">
-        <div class="account_inner">
+      <section className="my_account account_create">
+        <div className="account_inner">
           <div
-            class="account_left"
-            style={{ backgroundImage: `url(${"../../images/carefree.webp"})` }}
+            className="account_left"
+            style={{ backgroundImage: `url("../../images/carefree.webp")` }}
           >
-            <div class="white_logo">
-              <img src="images/WhiteLogo.webp" alt="white logo image" />
+            <div className="white_logo">
+              <img src="images/WhiteLogo.webp" alt="white logo" />
             </div>
           </div>
-          <div class="account_content">
-            <h2 class="box_heading">{t("Registration.createNew")}</h2>
+          <div className="account_content">
+            <h2 className="box_heading">{t("Registration.createNew")}</h2>
             <Formik
-              enableReinitialize
               initialValues={{
                 Name: "",
                 Email: "",
@@ -55,14 +60,14 @@ function Registration() {
                 PhoneNumber: "",
                 DateOfBirth: "",
                 CityId: 18,
-                Gender: "",  // No default gender selection
-                ProfilePhoto: "",
+                Gender: "",
+                ProfilePhoto: "", // Default empty photo
               }}
               validationSchema={signUpSchema}
               onSubmit={async (values, { setSubmitting, resetForm }) => {
                 setSubmitting(true);
                 await handleSubmitForm(values);
-                resetForm();
+                resetForm(); // Reset form after submission
                 setSubmitting(false);
               }}
             >
@@ -75,22 +80,21 @@ function Registration() {
                 handleSubmit,
               }) => (
                 <form
-                  class="login_account create_form"
+                  className="login_account create_form"
                   onSubmit={handleSubmit}
                   id="create_form"
                 >
-                  <div class="avatar_box">
-                    <div class="avatar_inner">
+                  <div className="avatar_box">
+                    <div className="avatar_inner">
                       <img
-                        src={values?.ProfilePhoto || "images/OBJECTS.webp"}
-                        alt="Avatar"
-                        id="avatarPreview"
-                        class="avatar_img"
+                        src={values.ProfilePhoto || "images/OBJECTS.webp"}
+                        alt="Avatar Preview"
+                        className="avatar_img"
                       />
-                      <label for="avatarUpload" class="upload_btn">
+                      <label htmlFor="avatarUpload" className="upload_btn">
                         <img
                           src="images/camera-icon.webp"
-                          alt="Camera Icon"
+                          alt="Upload"
                           width="20"
                           height="20"
                         />
@@ -98,61 +102,45 @@ function Registration() {
                       <input
                         type="file"
                         id="avatarUpload"
-                        name="avatarUpload"
+                        name="ProfilePhoto"
                         accept="image/*"
-                        onChange={(e) => handleProfilePhoto(e, setFieldValue)}
+                        onChange={(e) => handleProfilePhoto(e, setFieldValue)} // Handle file upload
                       />
                     </div>
                   </div>
-                  <div class="form_group">
-                    <label for="fullName">{t("Registration.FullName")}</label>
+                  <div className="form_group">
+                    <label htmlFor="fullName">{t("Registration.FullName")}</label>
                     <input
                       type="text"
                       id="fullName"
                       name="Name"
                       placeholder="Enter Full Name"
-                      value={values?.Name}
+                      value={values.Name}
                       onChange={handleChange}
                     />
                     <LocalError touched={touched.Name} error={errors.Name} />
                   </div>
-                  <div class="form_group ">
-                    <label for="phone">{t("Registration.PhoneNumber")}</label>
-                    <div class="phone_box">
+                  <div className="form_group">
+                    <label htmlFor="phone">{t("Registration.PhoneNumber")}</label>
+                    <div className="phone_box">
                       <select
                         id="country_code"
                         name="PhoneKey"
-                        class="flag_select"
-                        value={values?.PhoneKey}
-                        onChange={(e) => setFieldValue("PhoneKey", e.target.value)}  // Fix onChange
+                        className="flag_select"
+                        value={values.PhoneKey}
+                        onChange={(e) => setFieldValue("PhoneKey", e.target.value)}
                       >
-                        <option value="+965" class="flag_option">
-                          <img src="images/flag.svg" alt="US Flag" width="20" />{" "}
-                          +965
-                        </option>
-                        <option value="+91" class="flag_option">
-                          <img
-                            src="images/flag.svg"
-                            alt="India Flag"
-                            width="20"
-                          />{" "}
-                          +91
-                        </option>
-                        <option value="+966" class="flag_option">
-                          <img
-                            src="images/flag.svg"
-                            alt="India Flag"
-                            width="20"
-                          />{" "}
-                          +966
-                        </option>
+                        {/* Country code options */}
+                        <option value="+965">+965</option>
+                        <option value="+91">+91</option>
+                        <option value="+966">+966</option>
                       </select>
                       <input
                         type="tel"
                         id="PhoneNumber"
                         name="PhoneNumber"
                         placeholder="Enter phone number"
-                        value={values?.PhoneNumber}
+                        value={values.PhoneNumber}
                         onChange={handleChange}
                       />
                       <LocalError
@@ -161,75 +149,66 @@ function Registration() {
                       />
                     </div>
                   </div>
-                  <div class="form_group">
-                    <label for="email">{t("Registration.Email")}</label>
+                  <div className="form_group">
+                    <label htmlFor="email">{t("Registration.Email")}</label>
                     <input
                       type="email"
                       id="email"
                       name="Email"
                       placeholder="Enter Email"
-                      value={values?.Email}
+                      value={values.Email}
                       onChange={handleChange}
                     />
                     <LocalError touched={touched.Email} error={errors.Email} />
                   </div>
-                  <div class="form_group">
-                    <label for="password">{t("Registration.Password")}</label>
-                    <div class="password_box">
+                  <div className="form_group">
+                    <label htmlFor="password">{t("Registration.Password")}</label>
+                    <div className="password_box">
                       <input
                         type={showPass ? "text" : "password"}
                         id="password"
                         name="Password"
-                        class="password_input"
                         placeholder="Password"
-                        value={values?.Password}
+                        value={values.Password}
                         onChange={handleChange}
                       />
                       <span
-                        class="show_password"
+                        className="show_password"
                         onClick={() => setShowPass(!showPass)}
                       >
-                        {showPass ? (
-                          <img src="images/hide-icon.svg" class="hide" />
-                        ) : (
-                          <img src="images/show-icon.svg" class="show" />
-                        )}{" "}
+                        <img
+                          src={showPass ? "images/show-icon.svg" : "images/hide-icon.svg"}
+                          alt="Toggle Password"
+                        />
                       </span>
                     </div>
-                    <LocalError
-                      touched={touched.Password}
-                      error={errors.Password}
-                    />
+                    <LocalError touched={touched.Password} error={errors.Password} />
                   </div>
-                  <div class="form_group birth_date">
-                    <label for="dob">{t("Registration.DateofBirth")}</label>
+                  <div className="form_group birth_date">
+                    <label htmlFor="dob">{t("Registration.DateofBirth")}</label>
                     <input
                       type="date"
                       id="DateOfBirth"
                       name="DateOfBirth"
-                      placeholder="Select date of birth"
-                      value={values?.DateOfBirth}
+                      value={values.DateOfBirth}
                       onChange={handleChange}
                     />
-                    <LocalError
-                      touched={touched.DateOfBirth}
-                      error={errors.DateOfBirth}
-                    />
+                    <LocalError touched={touched.DateOfBirth} error={errors.DateOfBirth} />
                   </div>
-                  <div class="form_group gender gender_select">
+                  <div className="form_group gender gender_select">
                     <label>{t("Registration.Gender")}</label>
-                    <div class="gender_options">
+                    <div className="gender_options">
                       <label>
                         <input
                           type="radio"
                           name="Gender"
                           value="female"
-                          checked={values?.Gender === "female"}
+                          checked={values.Gender === "female"}
                           onChange={() => setFieldValue("Gender", "female")}
                         />
-                        <span class="gender_cat">
+                        <span className="gender_cat">
                           Female
-                          <img src="images/female-icon.svg" alt="female" />
+                          <img src="images/female-icon.svg" alt="Female" />
                         </span>
                       </label>
                       <label>
@@ -237,10 +216,10 @@ function Registration() {
                           type="radio"
                           name="Gender"
                           value="male"
-                          checked={values?.Gender === "male"}
+                          checked={values.Gender === "male"}
                           onChange={() => setFieldValue("Gender", "male")}
                         />
-                        <span class="gender_cat">
+                        <span className="gender_cat">
                           Male
                           <img src="images/male-icon.svg" alt="Male" />
                         </span>
@@ -248,14 +227,13 @@ function Registration() {
                     </div>
                     <LocalError touched={touched.Gender} error={errors.Gender} />
                   </div>
-                  <button type="submit" class="login_button register_btn">
+                  <button type="submit" className="login_button register_btn">
                     {t("Registration.RegisterNow")}
                   </button>
-                  <div class="create_account">
+                  <div className="create_account">
                     <p onClick={() => navigate("/login")}>
                       {t("Registration.Already")}{" "}
                       <a href="javascript:void(0)">
-                        {" "}
                         {t("Registration.LoginNow")}
                       </a>
                     </p>

@@ -80,7 +80,7 @@ function AboutUs() {
             <h2> {t('AboutUspage.OurRehla1')} <span>{t('AboutUspage.OurRehla2')}</span> {t('AboutUspage.OurRehla3')}</h2>
             <p>Fully layered dolor sit amet, consectetur Facere, <br /> nobis, id expedita dolores officiis laboriosam.</p>
           </div>
-          <div className="team_inner pt60">b
+          <div className="team_inner pt60">
             <div className="card_box">
               <img src="images/Cameron-Williamson.webp" alt="img" />
               <div className="card_details">

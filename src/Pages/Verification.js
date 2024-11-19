@@ -12,7 +12,6 @@ function Verification() {
   return (
 <>
     <Header/>
-
     <section class="varification ptb60">
       <div class="container">
          <form class="varification_form" id="varification_form" name="varification_form" method="post" action="#"> 
@@ -52,7 +51,6 @@ function Verification() {
          </form>
       </div>
    </section>
-
     <Footer/>
 </>
   )

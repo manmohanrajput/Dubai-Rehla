@@ -12,6 +12,11 @@ a{
     text-decoration: none;
     transition: all 0.3s;
 }
+
+.offer_img img {
+    max-width: 80%;
+    display: block;
+}
 img {
     max-width: 100%;
     display: block;

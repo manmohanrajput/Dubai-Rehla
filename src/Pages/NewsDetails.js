@@ -144,10 +144,10 @@ function NewsDetails() {
                   <div class="recent_content">
                      <h3>Share:</h3>
                      <ul class="social">
-                        <li><a href="javascript:void(0);"><img src="images/news/insta.svg" alt="insta"/></a></li>
-                        <li><a href="javascript:void(0);"><img src="images/news/in.svg" alt="in"/></a></li>
-                        <li><a href="javascript:void(0);"><img src="images/news/fb.svg" alt="fb"/></a></li>
-                        <li><a href="javascript:void(0);"><img src="images/news/twiter.svg" alt="twiter"/></a></li>
+                        <li><a href="https://www.instagram.com/rehlacar/"><img src="images/news/insta.svg" alt="insta"/></a></li>
+                        <li><a href="https://www.linkedin.com/company/rehlacar/"><img src="images/news/in.svg" alt="in"/></a></li>
+                        <li><a href="https://www.facebook.com/RehlaCars/?ref=bookmarks"><img src="images/news/fb.svg" alt="fb"/></a></li>
+                        <li><a href="https://x.com/Rehlacar?s=08"><img src="images/news/twiter.svg" alt="twiter"/></a></li>
                      </ul>
                   </div>
                </div>
