@@ -79,19 +79,19 @@ function WithdrawBalance() {
 									handleSubmit
 								}) =>
 								(
-									<form id="withdraw_form" onSubmit={handleSubmit} name="withdraw_form">
+									<form id="withdraw_form" onSubmit={handleSubmit} name="withdraw_form" >
 										{/* <form class="withdraw_form" id="withdraw_form" method="post" action="#" name="withdraw_form"> */}
-										<div class="withdraw_group">
+										<div class="withdraw_group" style={{marginTop:"40px"}}>
 											<label for="license">The amount required</label>
 											<input type="number" min={1} id="Amount" value={values?.Amount} placeholder="Attach a copy of the license" onChange={handleChange} />
 											<LocalError touched={touched.Amount} error={errors.Amount} />
 										</div>
-										<div class="withdraw_group">
+										<div class="withdraw_group" style={{marginTop:"40px"}}>
 											<label for="IBAN">IBAN number</label>
 											<input type="text" id="AccountNumber" value={values?.AccountNumber} placeholder="Attach a copy of the license" onChange={handleChange} />
 											<LocalError touched={touched.AccountNumber} error={errors.AccountNumber} />
 										</div>
-										<div class="withdraw_group">
+										<div class="withdraw_group" style={{marginTop:"40px"}}>
 											<label for="bank_name">Bank Name</label>
 											<select id="BankId" value={values?.BankId} onChange={handleChange}>
 												{bank?.map((data) => {
